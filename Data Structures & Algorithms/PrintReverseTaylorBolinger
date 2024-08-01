@@ -1,1 +1,42 @@
+//Name: Taylor Bolinger
+//Class: CS 5040/Section W01
+//Term: Summer 2024
+//Instructor: Umama Tasnim
 
+import java.util.Scanner;
+
+public class PrintReverseTaylorBolinger {
+    
+    public static void main(String[] args) { //Main method begins
+        Scanner scanner = new Scanner(System.in); //Scanner to read user's input 
+        char tryAgain; // Variable to store user's choice to continue program
+
+        // Do-while loop to allow the user to try reversing multiple different strings
+        do {
+            System.out.print("Entered string: ");
+            String input = scanner.nextLine(); // Read the user's input
+            
+            System.out.print("Reversed string: ");
+            printCharsReverse(input); // Call the recursive method to print the string in reverse
+            System.out.println(); // Print a new line after the reversed string
+            
+            // Ask the user if they want to try again
+            System.out.print("Try again(Y/N): ");
+            tryAgain = scanner.next().charAt(0); //Read user's choice
+            scanner.nextLine(); 
+            
+        } while (Character.toUpperCase(tryAgain) == 'Y'); // Continue the program if the user enters 'Y' or 'y'
+     }
+
+    // Recursive method to print the characters of the string in the reverse order
+    public static void printCharsReverse(String str) {
+        // Base case: if the string is empty, do nothing
+        if (str.isEmpty()) {
+            return;
+        }
+        
+        // Recursive case: print the last character and then call the method with the rest of the string
+        System.out.print(str.charAt(str.length() - 1));
+        printCharsReverse(str.substring(0, str.length() - 1)); // Recur with the substring excluding the last character
+    }
+}

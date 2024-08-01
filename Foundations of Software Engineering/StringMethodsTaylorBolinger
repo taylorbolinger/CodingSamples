@@ -1,1 +1,42 @@
+// Class:	CS500
+// Term:	Spring 2024
+// Name:	Taylor Bolinger
+// Program Number: Assignment 2 Programming 1
+// IDE:		IntelliJ
 
+import java.util.Scanner;
+public class StringMethodsTaylorBolinger {
+    public static void main(String[] args) { //Main method begins.
+        Scanner input = new Scanner(System.in);
+        //Prompt user to input two strings.
+        System.out.print("Input string 1: \t\t\t");
+        String s1 = input.next();
+        System.out.print("Input string 2: \t\t\t");
+        String s2 = input.next();
+
+        //Generate and display length of string 1.
+        System.out.print("a) Length of string 1: \t\t" + s1.length());
+
+        //Generate and display length of string 2.
+        System.out.print("\nb) Length of string 2: \t\t" + s2.length());
+
+        //Generate and display concatenation of string 1 and string 2 (string 3).
+        String s3 = s1 + " " + s2;
+        System.out.print("\nc) Concatenation: \t\t\t" + s3);
+
+        //Generate and display if the two strings have same set of characters with regard to case (case-sensitive).
+        System.out.print("\nd) String 1 and 2 equals? ");
+        if (s1.equals(s2))
+            System.out.print("\tEqual");
+        else
+            System.out.print("\tNot equal");
+
+        //Convert string 1 to uppercase and display.
+        System.out.print("\ne) Uppercase string 1: \t\t" + s1.toUpperCase());
+
+        //Convert string 2 to lowercase and display.
+        System.out.print("\nf) Lowercase string 2: \t\t" + s2.toLowerCase());
+
+        //Generate and display substring from string 1.
+        System.out.print("\ng) Valid substring: \t\t" + s1.substring(1,3));
+    }}
